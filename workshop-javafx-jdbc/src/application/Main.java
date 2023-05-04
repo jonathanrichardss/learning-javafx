@@ -9,12 +9,17 @@ import javafx.scene.control.ScrollPane;
 
 
 public class Main extends Application {
+	
+	
+	private static Scene mainScene;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
 			ScrollPane scrollPane = fxmlLoader.load();
 			Scene scene = new Scene(scrollPane);
+			mainScene = scene;
 			
 			scrollPane.setFitToWidth(true);
 			scrollPane.setFitToHeight(true);
@@ -26,6 +31,10 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static Scene getMainScene() {
+		return mainScene;
 	}
 	
 	public static void main(String[] args) {
