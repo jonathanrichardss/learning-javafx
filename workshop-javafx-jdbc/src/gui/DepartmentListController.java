@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import model.entities.Department;
 import model.services.DepartmentService;
 
-public class DepartmenListController implements Initializable {
+public class DepartmentListController implements Initializable {
 	
 	
 	private DepartmentService departmentService; 
@@ -40,6 +40,10 @@ public class DepartmenListController implements Initializable {
 	@FXML
 	private void onBtNewAction() {
 		System.out.println("Clicou no new!");
+	}
+	
+	public DepartmentListController() {
+		
 	}
 	
 	private void initializeNodes() {
