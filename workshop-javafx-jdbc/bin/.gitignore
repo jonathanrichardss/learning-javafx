@@ -2,5 +2,6 @@
 /.modules-info
 /.project
 /application/
+/db/
 /gui/
 /model/
