@@ -31,7 +31,6 @@ import model.services.DepartmentService;
 
 public class DepartmentListController implements Initializable {
 	
-	
 	private DepartmentService departmentService; 
 	
 	@FXML
@@ -84,6 +83,7 @@ public class DepartmentListController implements Initializable {
 			
 			DepartmentFormController controller = fxmlLoader.getController();
 			controller.setDepartmentEntity(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
@@ -100,7 +100,6 @@ public class DepartmentListController implements Initializable {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}
-	
 
 	public void setDepartmentService(DepartmentService departmentService) {
 		this.departmentService = departmentService;

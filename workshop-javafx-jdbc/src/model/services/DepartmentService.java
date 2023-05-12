@@ -21,4 +21,12 @@ public class DepartmentService {
 //		dao.findAll().forEach(e -> System.out.println(e.getName()));
 		return dao.findAll();
 	}
+	
+	public void saveOrUpdate(Department department) {
+		if (department.getId() == null) {
+			dao.insert(department);
+		} else {
+			dao.update(department);
+		}
+	}
 }
